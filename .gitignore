@@ -3,4 +3,7 @@ docs/.vuepress/dist/
 docs/.vuepress/.cache/
 .superpowers/
 .DS_Store
+docs/.vuepress/.temp/
 *.log
+.env*
+.env.local
