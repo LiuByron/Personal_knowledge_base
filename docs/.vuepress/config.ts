@@ -4,7 +4,7 @@ import { searchPlugin } from '@vuepress/plugin-search'
 
 export default defineUserConfig({
   lang: 'zh-CN',
-  title: 'Leo\'s KB',
+  title: "Leo's KB",
   description: '个人知识库 · 技术笔记 · 思考沉淀',
 
   head: [

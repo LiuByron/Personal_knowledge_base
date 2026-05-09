@@ -13,7 +13,11 @@
       "Bash(ls node_modules/.pnpm/vue*/node_modules/vue/package.json)",
       "Bash(pnpm why:*)",
       "Bash(echo \"EXIT_CODE=$?\")",
-      "Bash(cd:*)"
+      "Bash(cd:*)",
+      "Bash(timeout 15 pnpm docs:dev)",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm ls:*)",
+      "Bash(timeout 10 pnpm docs:dev)"
     ]
   }
 }
