@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init:*)",
+      "Bash(mkdir -p docs/superpowers/specs)",
+      "Bash(\"C:/Users/leo/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0/scripts/start-server.sh\" --project-dir \"F:/software/repository\")",
+      "Bash(\"/c/Users/leo/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0/skills/brainstorming/scripts/start-server.sh\" --project-dir \"F:/software/repository\")",
+      "Bash(python3:*)",
+      "Bash(python:*)",
+      "Bash(pnpm install:*)",
+      "WebSearch",
+      "Bash(pnpm docs:build)",
+      "Bash(ls node_modules/.pnpm/vue*/node_modules/vue/package.json)",
+      "Bash(pnpm why:*)",
+      "Bash(echo \"EXIT_CODE=$?\")",
+      "Bash(cd:*)"
+    ]
+  }
+}
