@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      vue:
+        specifier: ^3.5.0
+        version: 3.5.34
     devDependencies:
       '@vuepress/plugin-search':
         specifier: ^2.0.0-rc.0
