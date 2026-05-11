@@ -29,7 +29,10 @@
       "Bash(git push:*)",
       "Bash(echo \"http_proxy: $http_proxy\")",
       "Bash(mv \"docs/tech/vue/组合式API.md\" \"docs/tech/vue/composition-api.md\")",
-      "Bash(mv \"docs/tech/vue/vue基础.md\" \"docs/tech/vue/vue-basics.md\")"
+      "Bash(mv \"docs/tech/vue/vue基础.md\" \"docs/tech/vue/vue-basics.md\")",
+      "Bash(grep -o \"\"text\"\":\"\"[^\"\"]*\"\" F:/software/repository/docs/.vuepress/.temp/internal/siteData.js)",
+      "Bash(grep -o aria-label=\"\"[^\"\"]*\"\" F:/software/repository/docs/.vuepress/dist/tech/index.html)",
+      "Bash(tr -d '<>')"
     ]
   }
 }
