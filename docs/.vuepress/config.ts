@@ -2,6 +2,7 @@ import { defineUserConfig } from 'vuepress'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { defaultTheme } from '@vuepress/theme-default'
 import { searchPlugin } from '@vuepress/plugin-search'
+import { generateNavbar, generateSidebar } from './autoSidebar.js'
 
 export default defineUserConfig({
   lang: 'zh-CN',
@@ -25,67 +26,8 @@ export default defineUserConfig({
     logo: '/favicon.svg',
     repo: '',
     docsDir: 'docs',
-    navbar: [
-      { text: '技术', link: '/tech/' },
-      { text: '读书', link: '/reading/' },
-      { text: '思考', link: '/thinking/' },
-      { text: '生活', link: '/life/' },
-    ],
-    sidebar: {
-      '/tech/': [
-        {
-          text: '技术总览',
-          link: '/tech/',
-        },
-        {
-          text: '前端技术栈',
-          collapsible: true, // 允许折叠          
-          children: [
-            '/tech/前端技术栈/Vue',
-            '/tech/前端技术栈/React',
-          ]
-        },
-      ],
-      '/reading/': [
-        {
-          text: '读书总览',
-          link: '/reading/',
-        },
-        {
-          text: '读书笔记',
-          collapsible: true, // 允许折叠          
-          children: [
-            '/reading/如何高效学习',
-          ]
-        },
-      ],
-      '/thinking/': [
-        {
-          text: '思考总览',
-          link: '/thinking/',
-        },
-        {
-          text: '思考笔记',
-          collapsible: true, // 允许折叠          
-          children: [
-            '/thinking/关于人生的思考',
-          ]
-        },
-      ],
-      '/life/': [
-        {
-          text: '生活总览',
-          link: '/life/',
-        },
-        {
-          text: '生活笔记',
-          collapsible: true, // 允许折叠          
-          children: [
-            '/life/云漫湖',
-          ]
-        },
-      ],
-    },
+    navbar: generateNavbar(),
+    sidebar: generateSidebar(),
     editLink: false,
     lastUpdated: true,
     contributors: false
