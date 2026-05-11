@@ -25,7 +25,22 @@ export default defineUserConfig({
     logo: '/favicon.svg',
     repo: '',
     docsDir: 'docs',
-    sidebar: 'auto',
+    sidebar: {
+      '/tech/': [
+        {
+          text: '技术总览',
+          link: '/tech/',
+        },
+        {
+          text: 'Vue基础',
+          collapsible: true, // 允许折叠          
+          children: [
+            '/tech/vue/vue基础',
+            '/tech/vue/组合式API',
+          ]
+        },
+      ],
+    },
     editLink: false,
     lastUpdated: true,
     contributors: false,
