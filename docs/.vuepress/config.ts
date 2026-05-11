@@ -25,6 +25,12 @@ export default defineUserConfig({
     logo: '/favicon.svg',
     repo: '',
     docsDir: 'docs',
+    navbar: [
+      { text: '技术', link: '/tech/' },
+      { text: '读书', link: '/reading/' },
+      { text: '思考', link: '/thinking/' },
+      { text: '生活', link: '/life/' },
+    ],
     sidebar: {
       '/tech/': [
         {
@@ -32,25 +38,18 @@ export default defineUserConfig({
           link: '/tech/',
         },
         {
-          text: 'Vue基础',
+          text: '前端技术栈',
           collapsible: true, // 允许折叠          
           children: [
-            '/tech/vue/vue基础',
-            '/tech/vue/组合式API',
+            '/tech/前端技术栈/composition-api',
+            '/tech/前端技术栈/vue-basics',
           ]
         },
       ],
     },
     editLink: false,
     lastUpdated: true,
-    contributors: false,
-
-    navbar: [
-      { text: '技术', link: '/tech/' },
-      { text: '读书', link: '/reading/' },
-      { text: '思考', link: '/thinking/' },
-      { text: '生活', link: '/life/' },
-    ],
+    contributors: false
   }),
 
   plugins: [
