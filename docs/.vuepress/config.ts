@@ -8,6 +8,8 @@ export default defineUserConfig({
   title: "Leo's KB",
   description: '个人知识库 · 技术笔记 · 思考沉淀',
 
+  base: '/Personal_knowledge_base/',
+
   bundler: viteBundler(),
 
   head: [
