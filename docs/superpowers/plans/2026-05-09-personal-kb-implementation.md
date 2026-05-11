@@ -691,22 +691,22 @@ actions: false
 
 <div class="category-grid">
 
-[技术笔记](/tech/)
+[技术笔记](../../tech/)
 :   💻
 :   技术笔记
 :   前端 / 后端 / DevOps
 
-[读书笔记](/reading/)
+[读书笔记](../../reading/)
 :   📚
 :   读书笔记
 :   阅读思考与摘要
 
-[思考复盘](/thinking/)
+[思考复盘](../../thinking/)
 :   💭
 :   思考复盘
 :   工作复盘与成长
 
-[生活记录](/life/)
+[生活记录](../../life/)
 :   🌿
 :   生活记录
 :   日常随笔与感悟
@@ -722,7 +722,7 @@ actions: false
 <div class="article-item">
   <div class="article-date">2026-05-09</div>
   <div class="article-title">
-    <a href="/tech/frontend/getting-started.html">知识库搭建指南</a>
+    <a href="../../tech/frontend/getting-started.html">知识库搭建指南</a>
   </div>
   <div class="article-meta">
     <span>📁 tech/frontend</span>

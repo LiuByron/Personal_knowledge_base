@@ -18,11 +18,11 @@ footer: MIT Licensed | Copyright 2026
 |:---:|:---:|:---:|
 | **💻 技术笔记** | **📚 读书笔记** | **💭 思考复盘** |
 | 前端 · 后端 · DevOps | 阅读思考与摘要 | 工作复盘与成长 |
-| [浏览 →](/tech/) | [浏览 →](/reading/) | [浏览 →](/thinking/) |
+| [浏览 →](tech/) | [浏览 →](reading/) | [浏览 →](thinking/) |
 
 ## 最近更新
 
-### [知识库搭建指南](/tech/frontend/getting-started.html)
+### [知识库搭建指南](tech/frontend/getting-started.html)
 
 2026-05-09 · tech/frontend · 标签：VuePress, 指南
 
