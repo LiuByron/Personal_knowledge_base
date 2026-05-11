@@ -17,7 +17,14 @@
       "Bash(timeout 15 pnpm docs:dev)",
       "Bash(pnpm add:*)",
       "Bash(pnpm ls:*)",
-      "Bash(timeout 10 pnpm docs:dev)"
+      "Bash(timeout 10 pnpm docs:dev)",
+      "Bash(pnpm docs:dev)",
+      "Bash(ls F:/software/repository/node_modules/.pnpm/@vuepress+client*)",
+      "Bash(ls:*)",
+      "Bash(grep -A2 vuepress.*client F:/software/repository/pnpm-lock.yaml)",
+      "Bash(grep \"client\" F:/software/repository/node_modules/.pnpm/vuepress-vite@2.0.0-rc.0*/node_modules/@vuepress/)",
+      "Bash(npm view:*)",
+      "Bash(npx vp-update:*)"
     ]
   }
 }

@@ -1,4 +1,5 @@
 import { defineUserConfig } from 'vuepress'
+import { viteBundler } from '@vuepress/bundler-vite'
 import { defaultTheme } from '@vuepress/theme-default'
 import { searchPlugin } from '@vuepress/plugin-search'
 
@@ -6,6 +7,8 @@ export default defineUserConfig({
   lang: 'zh-CN',
   title: "Leo's KB",
   description: '个人知识库 · 技术笔记 · 思考沉淀',
+
+  bundler: viteBundler(),
 
   head: [
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
