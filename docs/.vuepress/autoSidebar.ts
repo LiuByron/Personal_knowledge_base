@@ -1,4 +1,4 @@
-import { readdirSync, statSync } from 'node:fs'
+import { readdirSync, readFileSync, statSync } from 'node:fs'
 import { join, relative, sep } from 'node:path'
 import type { NavbarItem, SidebarConfig } from '@vuepress/theme-default'
 
@@ -12,9 +12,42 @@ const EXCLUDE_DIRS = new Set([
   'assets',
 ])
 
-// 格式化标题：去掉扩展名，文件名中的下划线转空格（中文保持原样）
+// 目录名 → 显示名映射（简体中文）；未命中则用目录名本身
+const DIR_NAME_MAP: Record<string, string> = {
+  tech: '技术',
+  frontend: '前端开发',
+  backend: '后端开发',
+  devops: 'DevOps',
+  reading: '读书',
+  thinking: '思考',
+  life: '生活',
+}
+
+// 从 .md 文件的 frontmatter 中提取 title 字段
+function extractTitle(filePath: string): string | null {
+  try {
+    const content = readFileSync(filePath, 'utf-8')
+    const m = content.match(/^---\s*\ntitle:\s*(.+?)\s*\n(?:.*?\n)*?---/m)
+    return m ? m[1].trim() : null
+  } catch {
+    return null
+  }
+}
+
+// 获取 .md 文件的显示名：优先 frontmatter title → 文件名
+function getMdTitle(filePath: string): string {
+  return extractTitle(filePath) ?? formatTitle(filePath)
+}
+
+// 获取目录的显示名：优先映射表 → 目录名
+function getDirTitle(dirName: string): string {
+  return DIR_NAME_MAP[dirName] ?? dirName
+}
+
+// 格式化标题：去掉扩展名和路径，文件名中的下划线转空格
 function formatTitle(path: string): string {
-  return path.replace(/\.md$/, '').replace(/_/g, ' ')
+  const name = path.split(/[/\\]/).pop() ?? path
+  return name.replace(/\.md$/, '').replace(/_/g, ' ')
 }
 
 // 生成文件路径（去掉 docs 前缀和 .md 后缀）
@@ -35,7 +68,7 @@ export function generateNavbar(): NavbarItem[] {
     try {
       statSync(readmePath)
       sections.push({
-        text: formatTitle(entry.name),
+        text: getDirTitle(entry.name),
         link: `/${entry.name}/`,
       })
     } catch {
@@ -89,7 +122,7 @@ export function generateSidebar(): SidebarConfig {
     try {
       statSync(join(sectionDir, 'README.md'))
       items.push({
-        text: `${formatTitle(entry.name)}总览`,
+        text: `${getDirTitle(entry.name)}总览`,
         link: sectionPath,
       })
     } catch {
@@ -111,10 +144,13 @@ export function generateSidebar(): SidebarConfig {
       const children = mdFiles.map(toLink)
 
       items.push({
-        text: formatTitle(sub.name),
+        text: getDirTitle(sub.name),
         collapsible: true,
-        children: children.sort(),
-      })
+        children: children.sort().map((link) => ({
+          link,
+          text: getMdTitle(join(DOCS_ROOT, link.replace(/^\//, '') + '.md')),
+        })),
+      } as never)
     }
 
     // 直接在 section 根下的 md 文件（非 README）→ 作为直接链接
@@ -123,7 +159,7 @@ export function generateSidebar(): SidebarConfig {
       if (sub.name === 'README.md') continue
 
       items.push({
-        text: formatTitle(sub.name),
+        text: getMdTitle(join(sectionDir, sub.name)),
         link: `${sectionPath}${sub.name.replace(/\.md$/, '')}`,
       })
     }
