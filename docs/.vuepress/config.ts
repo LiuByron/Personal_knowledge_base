@@ -41,8 +41,47 @@ export default defineUserConfig({
           text: '前端技术栈',
           collapsible: true, // 允许折叠          
           children: [
-            '/tech/前端技术栈/composition-api',
-            '/tech/前端技术栈/vue-basics',
+            '/tech/前端技术栈/Vue',
+            '/tech/前端技术栈/React',
+          ]
+        },
+      ],
+      '/reading/': [
+        {
+          text: '读书总览',
+          link: '/reading/',
+        },
+        {
+          text: '读书笔记',
+          collapsible: true, // 允许折叠          
+          children: [
+            '/reading/如何高效学习',
+          ]
+        },
+      ],
+      '/thinking/': [
+        {
+          text: '思考总览',
+          link: '/thinking/',
+        },
+        {
+          text: '思考笔记',
+          collapsible: true, // 允许折叠          
+          children: [
+            '/thinking/关于人生的思考',
+          ]
+        },
+      ],
+      '/life/': [
+        {
+          text: '生活总览',
+          link: '/life/',
+        },
+        {
+          text: '生活笔记',
+          collapsible: true, // 允许折叠          
+          children: [
+            '/life/云漫湖',
           ]
         },
       ],
