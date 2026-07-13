@@ -34,7 +34,8 @@
       "Bash(grep -o aria-label=\"\"[^\"\"]*\"\" F:/software/repository/docs/.vuepress/dist/tech/index.html)",
       "Bash(tr -d '<>')",
       "Bash(chmod +w \"f:/software/repository/docs/life/上班/员工手册全册法律风险提示总结.md\")",
-      "Bash(chmod +w \"f:/software/repository/docs/life/上班/薪酬管理制度-温和应对与证据收集清单.md\")"
+      "Bash(chmod +w \"f:/software/repository/docs/life/上班/薪酬管理制度-温和应对与证据收集清单.md\")",
+      "Bash(powershell *)"
     ]
   }
 }
